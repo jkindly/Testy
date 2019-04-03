@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+            <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        {% endblock %}
     </head>
     <body>
+        <header class="top-bar">
+            <div class="top-content">
+                <div class="logo">
+                    <a href="{{ path('app_homepage') }}">
+                        <i class="fas fa-tasks"></i>
+                        Kreator testów
+                    </a>
+                </div>
+                <nav>
+                    <div class="nav-link"><a href="#">Nowy test</a></div>
+                    <div class="nav-link"><a href="#">Twoje testy</a></div>
+                    <div class="nav-link"><a href="#">Ustawienia</a></div>
+                </nav>
+            </div>
+        </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
