@@ -18,14 +18,25 @@
                         Kreator testów
                     </a>
                 </div>
-                <nav>
+            </div>
+        </header>
+        <div class="container">
+            <nav>
+                <i class="fas fa-caret-left"></i>
+                <div class="nav-links">
                     <div class="nav-link"><a href="#">Nowy test</a></div>
                     <div class="nav-link"><a href="#">Twoje testy</a></div>
                     <div class="nav-link"><a href="#">Ustawienia</a></div>
-                </nav>
-            </div>
-        </header>
+                </div>
+            </nav>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        </div>
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.3.1.js"
+                    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+                    crossorigin="anonymous">
+            </script>
+            <script src="{{ asset('js/main.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
