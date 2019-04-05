@@ -1,6 +1,7 @@
 :root {
     --top-bar-bg-color: #F6F6F6;
     --def-font-color: #3F3F3F;
+    --def-red: #FF4D4D;
 }
 
 html, body {
@@ -36,7 +37,7 @@ a {
 
 .logo {
     font-size: 2.5rem;
-    color: #4086BC;
+    color: var(--def-red);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -45,7 +46,6 @@ a {
 
 .fa-tasks {
     font-size: 4rem;
-    color: #459ADB;
 }
 
 .container {
@@ -57,10 +57,14 @@ a {
 nav {
     height: 300px;
     width: 50px;
-    background: red;
+    background: var(--def-red);
+    border-left: 1px solid #CD1F1F;
+    border-top: 1px solid #CD1F1F;
+    border-bottom: 1px solid #CD1F1F;
     font-size: 2rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: #3285C4;
     position: fixed;
     right: 0;
@@ -89,7 +93,17 @@ nav:hover .fa-caret-left {
 
 .nav-links {
     display: none;
-    /*color: #fff;*/
+    width: 160px;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.nav-link {
+    margin-bottom: 45px;
+}
+
+.nav-link:last-child {
+    margin-bottom: 0;
 }
 
 .nav-link:hover {
@@ -117,4 +131,5 @@ main {
     border: 1px solid black;
     margin-bottom: 50px;
     background-color: #fff;
+    font-size: 1rem;
 }

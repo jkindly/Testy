@@ -2,9 +2,10 @@ $(function(){
 
     $('nav').hover(function() {
         $(this).stop().animate({
-            'width': '150px'
+            'width': '200px'
+        }, function() {
+            $('.nav-links').css('display', 'block');
         });
-        $('.nav-links').css('display', 'block');
     }, function() {
         $(this).stop().animate({
             'width': '50px'
