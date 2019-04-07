@@ -5,7 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext">
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
             <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         {% endblock %}
     </head>
@@ -18,19 +18,23 @@
                         Kreator testów
                     </a>
                 </div>
+                <div class="user-info">
+                    {% if app.user %}
+                        {{ app.user.firstName }} {{ app.user.lastName }}
+                        <span class="user-logout"><a href="{{ path('app_logout') }}">Wyloguj</a></span>
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    {% else %}
+                        <span id="login-action"><a href="{{ path('app_login') }}"><i class="fas fa-sign-in-alt"></i> Zaloguj</a></span>
+                        <span id="new-account"><a href="#"><i class="fas fa-user-plus"></i> Nowe konto</a></span>
+                    {% endif %}
+                </div>
             </div>
         </header>
         <div class="container">
             <main>
-                <nav>
-                    <i class="fas fa-caret-left"></i>
-                    <div class="nav-links">
-                        <div class="nav-link"><a href="{{ path('app_new_test') }}"><i class="fas fa-plus"></i> Nowy test</a></div>
-                        <div class="nav-link"><a href="#"><i class="far fa-file-alt"></i> Twoje testy</a></div>
-                        <div class="nav-link"><a href="#"><i class="fas fa-cog"></i> Ustawienia</a></div>
-                    </div>
-                </nav>
-            {% block body %}{% endblock %}
+                {% block body %}{% endblock %}
             </main>
         </div>
         {% block javascripts %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="login-container">
+    <h3>Logowanie</h3>
+    <form method="post">
+                {% if error %}
+                    <div class="login-invalid-credentials">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+        <input type="text" name="username" value="{{ last_username }}" class="login-box-field login-field" placeholder="login"> <br>
+        <input type="password" name="password" class="login-box-field password-field" placeholder="hasło">
+        <div class="remember-me">
+            <label class="checkbox-container">
+                <input type="checkbox" name="_remember_me" checked> Zapamiętaj mnie
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <button class="login-box-field login-button">
+            Zaloguj
+        </button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nowy test{% endblock %}
+
+{% block body %}
+    <section class="create-new-test">
+        Utwórz nowy test!
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    </section>
+{% endblock %}
