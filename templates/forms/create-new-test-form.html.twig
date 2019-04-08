@@ -1,0 +1,11 @@
+<h1><i class="far fa-file-alt"></i> Utwórz nowy test</h1>
+{{ form_start(form) }}
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name, {'attr': {placeholder: 'Wprowadź nazwę'} }) }}
+<div class="new-test-error">
+    {% for error in form.name.vars.errors %}
+        <span>{{ error.message }}</span>
+    {% endfor %}
+</div>
+<button type="submit" class="new-test-btn">Utwórz</button>
+{{ form_end(form) }}

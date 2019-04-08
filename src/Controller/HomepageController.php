@@ -12,6 +12,8 @@ class HomepageController extends AbstractController
      */
     public function index()
     {
+        if ($this->isGranted('IS_AUTHENTICATED_REMEMBERED')) return $this->redirectToRoute('app_dashboard');
+
         return $this->render('homepage/homepage.html.twig');
     }
 }

@@ -2,6 +2,8 @@
     --top-bar-bg-color: #F6F6F6;
     --def-font-color: #3F3F3F;
     --def-red: #FF4D4D;
+    --def-red-border: #D13232;
+    --def-red-hover: #FF2C2C;
 }
 
 html, body {
@@ -325,7 +327,6 @@ main {
 .input-test {
     width: 400px;
     height: 35px;
-    margin-bottom: 10px;
     background-color: white;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -335,4 +336,38 @@ main {
     padding: 5px;
     border: 1px solid #B3B3B3;
     text-align: center;
+}
+
+.input-test:focus {
+    border: 1px solid #000;
+}
+
+.new-test-btn {
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: var(--def-red);
+    color: #fff;
+    font-size: 2rem;
+    border: 1px solid var(--def-red-border);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+.new-test-btn:hover {
+    background-color: var(--def-red-hover);
+}
+
+.new-test-error {
+    color: var(--def-red);
 }
