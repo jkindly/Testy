@@ -318,6 +318,21 @@ main {
 }
 
 .create-new-test {
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
+    text-align: center;
+}
+
+.input-test {
+    width: 400px;
+    height: 35px;
+    margin-bottom: 10px;
+    background-color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 2.2rem;
+    color: #707070;
+    padding: 5px;
+    border: 1px solid #B3B3B3;
     text-align: center;
 }

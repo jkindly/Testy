@@ -4,8 +4,10 @@
 
 {% block body %}
     <section class="create-new-test">
-        Utwórz nowy test!
+        <h1>Utwórz nowy test</h1>
         {{ form_start(form) }}
+            {{ form_widget(form) }}
         {{ form_end(form) }}
+        <button type="submit">Utwórz</button>
     </section>
 {% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -20,9 +21,18 @@ class AppFixtures extends Fixture
     {
         $user = new User();
         $user
+            ->setFirstName('Jakub')
+            ->setLastName('Kozupa')
             ->setEmail('example@gmail.com')
             ->setPassword($this->passwordEncoder->encodePassword($user, 'mnkctnob'))
             ->setUsername('jakub.kozupa');
+
+        $category = new Category();
+        $category2 = new Category();
+        $category->setName('Fizyka');
+        $category2->setName('Matematyka');
+        $manager->persist($category);
+        $manager->persist($category2);
         $manager->persist($user);
         $manager->flush();
     }
