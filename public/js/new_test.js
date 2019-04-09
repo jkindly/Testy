@@ -20,26 +20,33 @@ $(function(){
     // Tworzenie nowego Testu (ajax)
     $('.create-new-test').on('click', '.new-test-btn', function(e) {
         e.preventDefault();
+        let form = $('#new-test-form');
         let content = $('.create-new-test');
-        let form = $(this).parent().serializeObject();
-        let loading = $('.loading');
+        let formData = $(this).parent().serializeObject();
+        let loading = '<div class="loading"><img src="../img/loading.gif" alt="Ładowanie"></div>';
         $.ajax({
            url: '/ajaxAction/new/test',
             dataType: 'json',
             method: 'POST',
-            data: form,
+            data: formData,
             async: true,
             cache: false,
             beforeSend: function() {
-               content.html('');
-               loading.show();
+               form.html(loading);
+               // loading.show();
             },
             success: function(data) {
-               content.html(data);
+               if (data['status'] === 'form_valid') content.addClass('test-editing');
+               content.html(data['content']);
                console.log(data);
             },
-            error: function(data) {
+            error: function() {
+               form.html('Wystąpił błąd, spróbuj ponownie');
                console.log(data);
+
+            },
+            complete: function() {
+
             }
         });
     });

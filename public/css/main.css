@@ -319,9 +319,76 @@ main {
     font-size: 1rem;
 }
 
-.create-new-test {
+.create-new-test-container {
     margin: 20px auto 0 auto;
     text-align: center;
+    position: relative;
+}
+
+.test-editing {
+    margin: 0 auto;
+    border: 1px solid black;
+    height: 297mm;
+    width: 210mm;
+    background-color: #fff;
+    padding: 5px;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.test-editing > h4 {
+    margin: 0;
+    padding: 5px;
+}
+
+.test-editing > h4 > .fa-edit {
+    color: red;
+    cursor: pointer;
+}
+
+.test-upper-informations{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10px;
+}
+
+.student-details td:last-child {
+    border: 1px solid black;
+}
+
+.test-questions {
+    margin-top: 20px;
+    text-align: left;
+    font-style: italic;
+}
+
+.question-edit-mode {
+    margin-bottom: 10px;
+}
+
+#new-test-form {
+    position: relative;
+}
+
+.loading {
+    /*display: none;*/
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    top: 20px; left: 0; bottom: 0; right: 0;
+}
+
+.loading img {
+    width: 100px;
+    height: 100px;
 }
 
 .input-test {
@@ -336,6 +403,31 @@ main {
     padding: 5px;
     border: 1px solid #B3B3B3;
     text-align: center;
+}
+
+.input-test-description {
+    height: 20px;
+    width: 90%;
+    font-size: 1.2rem;
+    resize: vertical;
+}
+
+.input-test-question {
+    text-align: left;
+    display: block;
+    width: 200px;
+    height: 20px;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+.input-test-answer {
+    text-align: left;
+    margin-left: 10px;
+    display: block;
+    width: 150px;
+    height: 20px;
+    font-size: 1.4rem;
 }
 
 .input-test:focus {
