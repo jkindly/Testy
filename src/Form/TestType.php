@@ -3,9 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Category;
+use App\Entity\Question;
 use App\Entity\Test;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,13 +17,21 @@ class TestType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+//        $builder
+//            ->add('name', TextType::class, [
+//                'label' => false,
+//                'attr' => [
+//                    'class' => 'input-test',
+//                ],
+//            ])
+//        ;
         $builder
-            ->add('name', TextType::class, [
-                'label' => false,
-                'attr' => [
-                    'class' => 'input-test',
-                ],
+            ->add('questions', CollectionType::class, [
+                'entry_type' => QuestionType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
             ])
+        ;
 //            ->add('category', EntityType::class, [
 //                'class' => Category::class,
 //                'label' => false,

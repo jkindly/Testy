@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Test;
 use App\Form\TestType;
 use App\Services\NewTestService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,6 +17,8 @@ class NewTestController extends AbstractController
      */
     public function newTest(Request $request)
     {
+        $test = new Test();
+
         $form = $this->createForm(TestType::class);
         $form->handleRequest($request);
 
@@ -56,5 +59,18 @@ class NewTestController extends AbstractController
         }
 
         return new JsonResponse($response);
+    }
+
+    /**
+     * @Route("/ajaxAction/add/questions")
+     */
+    public function ajaxAddNewQuestions(Request $request)
+    {
+        if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_new_test');
+
+
+        $data = $request->request->get('test');
+
+        return new JsonResponse($data);
     }
 }

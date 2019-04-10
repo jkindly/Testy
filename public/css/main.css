@@ -373,6 +373,24 @@ main {
     margin-bottom: 10px;
 }
 
+.add-next-question {
+    font-size: 1.5rem;
+    font-style: normal;
+    background-color: var(--def-red);
+    border: 1px solid var(--def-red-border);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 160px;
+    color: #fff;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.add-next-question:hover {
+    background-color: var(--def-red-hover);
+}
+
 #new-test-form {
     position: relative;
 }

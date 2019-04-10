@@ -18,7 +18,8 @@
                     {#<span>{{ error.message }}</span>#}
                 {#{% endfor %}#}
             {#</div>#}
-            {#<button type="submit" class="new-test-btn">Utwórz</button>#}
+
+            <button type="submit" class="new-test-btn">Utwórz</button>
             {#{{ form_end(form) }}#}
             <h4>Test z funkcji trygonometrycznych <i class="fas fa-edit"></i></h4>
             <textarea class="input-test input-test-description" placeholder="Wprowadź opis testu, dodatkowe informacje"></textarea>
@@ -44,22 +45,37 @@
                     </tr>
                 </table>
             </div>
-            <div class="test-questions">
-                <div class="question-edit-mode">
-                    <textarea class="input-test input-test-question" placeholder="Pytanie 1..."></textarea>
-                    <textarea class="input-test input-test-answer" placeholder="Odpowiedź A..."></textarea>
-                    <textarea class="input-test input-test-answer" placeholder="Odpowiedź B..."></textarea>
-                    <textarea class="input-test input-test-answer" placeholder="Odpowiedź C..."></textarea>
-                    <textarea class="input-test input-test-answer" placeholder="Odpowiedź D..."></textarea>
-                </div>
-                <div class="question-edit-mode">
-                    <textarea class="input-test input-test-question" placeholder="Pytanie 2..."></textarea>
-                    <textarea class="input-test input-test-answer" placeholder="Odpowiedź A..."></textarea>
-                    <textarea class="input-test input-test-answer" placeholder="Odpowiedź B..."></textarea>
-                    <textarea class="input-test input-test-answer" placeholder="Odpowiedź C..."></textarea>
-                    <textarea class="input-test input-test-answer" placeholder="Odpowiedź D..."></textarea>
+            {{ form_start(form) }}
+            <div class="test-questions" data-prototype="{{ form_widget(form.questions.vars.prototype)|e('html_attr') }}">
+                <div class="add-next-question">
+                    <i class="fas fa-plus"></i>
+                    Dodaj kolejne pytanie
                 </div>
             </div>
+            {{ form_end(form) }}
+            {#<form id="questions-form" method="post">#}
+                {#<div class="test-questions">#}
+                    {#<div id="question-nr1" class="question-edit-mode">#}
+                        {#<textarea class="input-test input-test-question" placeholder="Pytanie 1..."></textarea>#}
+                        {#<textarea class="input-test input-test-answer" placeholder="Odpowiedź A..."></textarea>#}
+                        {#<textarea class="input-test input-test-answer" placeholder="Odpowiedź B..."></textarea>#}
+                        {#<textarea class="input-test input-test-answer" placeholder="Odpowiedź C..."></textarea>#}
+                        {#<textarea class="input-test input-test-answer" placeholder="Odpowiedź D..."></textarea>#}
+                    {#</div>#}
+                    {#<div id="question-nr2" class="question-edit-mode">#}
+                        {#<textarea class="input-test input-test-question" placeholder="Pytanie 2..."></textarea>#}
+                        {#<textarea class="input-test input-test-answer" placeholder="Odpowiedź A..."></textarea>#}
+                        {#<textarea class="input-test input-test-answer" placeholder="Odpowiedź B..."></textarea>#}
+                        {#<textarea class="input-test input-test-answer" placeholder="Odpowiedź C..."></textarea>#}
+                        {#<textarea class="input-test input-test-answer" placeholder="Odpowiedź D..."></textarea>#}
+                    {#</div>#}
+                    {#<div class="add-next-question">#}
+                        {#<i class="fas fa-plus"></i>#}
+                        {#Dodaj kolejne pytanie#}
+                    {#</div>#}
+                {#</div>#}
+                {#<button id="add-new-test-btn" type="submit">Utwórz</button>#}
+            {#</form>#}
         </div>
     </section>
 {% endblock %}

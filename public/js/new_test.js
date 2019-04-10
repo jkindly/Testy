@@ -51,4 +51,29 @@ $(function(){
         });
     });
 
+    // let addNewQuestion = $('<div class="add-next-question"><i class="fas fa-plus"></i>Dodaj kolejne pytanie</div>');
+
+    $('.add-next-question').on('click', function() {
+        var prototype = $('.test-questions').data('prototype');
+        $(this).before(prototype);
+    });
+
+
+    $('#questions-form').on('click', '#add-new-test-btn', function(e) {
+        e.preventDefault();
+        let formData = $('.input-test-answer').val();
+        console.log(formData);
+        $.ajax({
+            url: '/ajaxAction/add/questions',
+            dataType: 'json',
+            method: 'POST',
+            data: formData,
+            async: true,
+            cache: false,
+            success: function(data) {
+                console.log(data)
+            }
+        });
+    });
+
 });
