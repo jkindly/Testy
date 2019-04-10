@@ -12,11 +12,31 @@ class QuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('questionTitle')
-            ->add('answer1')
-            ->add('answer2')
-            ->add('answer3')
-            ->add('answer4')
+            ->add('questionTitle', null, [
+                'attr' => [
+                    'placeholder' => 'Pytanie 1...'
+                ]
+            ])
+            ->add('answer1', null, [
+                'attr' => [
+                    'placeholder' => 'Odpowiedź A...'
+                ]
+            ])
+            ->add('answer2', null, [
+                'attr' => [
+                    'placeholder' => 'Odpowiedź B...'
+                ]
+            ])
+            ->add('answer3', null, [
+                'attr' => [
+                    'placeholder' => 'Odpowiedź C...'
+                ]
+            ])
+            ->add('answer4', null, [
+                'attr' => [
+                    'placeholder' => 'Odpowiedź D...'
+                ]
+            ])
         ;
     }
 
@@ -24,6 +44,7 @@ class QuestionType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Question::class,
+            'label' => false,
         ]);
     }
 }

@@ -53,27 +53,45 @@ $(function(){
 
     // let addNewQuestion = $('<div class="add-next-question"><i class="fas fa-plus"></i>Dodaj kolejne pytanie</div>');
 
+    var $collectionHolder = $('.test-questions');
+
+    $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
     $('.add-next-question').on('click', function() {
+        addQuestionForm($collectionHolder);
+    });
+
+    function addQuestionForm($collectionHolder) {
         var prototype = $('.test-questions').data('prototype');
-        $(this).before(prototype);
-    });
+        var index = $collectionHolder.data('index');
+        var newForm = prototype;
+
+        newForm = newForm.replace(/__name__/g, index);
+
+        $collectionHolder.data('index', index + 1);
+
+        $('.add-next-question').before(newForm);
+    }
 
 
-    $('#questions-form').on('click', '#add-new-test-btn', function(e) {
-        e.preventDefault();
-        let formData = $('.input-test-answer').val();
-        console.log(formData);
-        $.ajax({
-            url: '/ajaxAction/add/questions',
-            dataType: 'json',
-            method: 'POST',
-            data: formData,
-            async: true,
-            cache: false,
-            success: function(data) {
-                console.log(data)
-            }
-        });
-    });
+
+
+
+    // $('#questions-form').on('click', '#add-new-test-btn', function(e) {
+    //     e.preventDefault();
+    //     let formData = $('.input-test-answer').val();
+    //     console.log(formData);
+    //     $.ajax({
+    //         url: '/ajaxAction/add/questions',
+    //         dataType: 'json',
+    //         method: 'POST',
+    //         data: formData,
+    //         async: true,
+    //         cache: false,
+    //         success: function(data) {
+    //             console.log(data)
+    //         }
+    //     });
+    // });
 
 });

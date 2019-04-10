@@ -21,7 +21,6 @@ class Test
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Wprowadź tytuł", groups={"test_name"})
      */
     private $name;
 

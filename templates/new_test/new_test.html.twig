@@ -19,39 +19,44 @@
                 {#{% endfor %}#}
             {#</div>#}
 
-            <button type="submit" class="new-test-btn">Utwórz</button>
-            {#{{ form_end(form) }}#}
-            <h4>Test z funkcji trygonometrycznych <i class="fas fa-edit"></i></h4>
-            <textarea class="input-test input-test-description" placeholder="Wprowadź opis testu, dodatkowe informacje"></textarea>
-            <div class="test-upper-informations">
-                <table class="student-details">
-                    <tr>
-                        <td>Imię i nazwisko</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Nr indeksu</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Kierunek</td>
-                        <td style="width: 200px"></td>
-                    </tr>
-                </table>
-                <table class="student-details">
-                    <tr>
-                        <td>Ilość punktów</td>
-                        <td style="width: 100px"></td>
-                    </tr>
-                </table>
-            </div>
+{#            <button type="submit" class="new-test-btn">Utwórz</button>#}
+{#            #}{#{{ form_end(form) }}#}
+{#            <h4>Test z funkcji trygonometrycznych <i class="fas fa-edit"></i></h4>#}
+{#            <textarea class="input-test input-test-description" placeholder="Wprowadź opis testu, dodatkowe informacje"></textarea>#}
+{#            <div class="test-upper-informations">#}
+{#                <table class="student-details">#}
+{#                    <tr>#}
+{#                        <td>Imię i nazwisko</td>#}
+{#                        <td></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>Nr indeksu</td>#}
+{#                        <td></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>Kierunek</td>#}
+{#                        <td style="width: 200px"></td>#}
+{#                    </tr>#}
+{#                </table>#}
+{#                <table class="student-details">#}
+{#                    <tr>#}
+{#                        <td>Ilość punktów</td>#}
+{#                        <td style="width: 100px"></td>#}
+{#                    </tr>#}
+{#                </table>#}
+{#            </div>#}
             {{ form_start(form) }}
             <div class="test-questions" data-prototype="{{ form_widget(form.questions.vars.prototype)|e('html_attr') }}">
+                {% for question in form.questions %}
+                    {{ form_widget(question) }}
+                    {{ form_errors(question) }}
+                {% endfor %}
                 <div class="add-next-question">
                     <i class="fas fa-plus"></i>
-                    Dodaj kolejne pytanie
+                    Dodaj pytanie
                 </div>
             </div>
+            <button type="submit">Utwórz</button>
             {{ form_end(form) }}
             {#<form id="questions-form" method="post">#}
                 {#<div class="test-questions">#}

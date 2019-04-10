@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Test;
 use App\Form\TestType;
 use App\Services\NewTestService;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,11 +20,12 @@ class NewTestController extends AbstractController
     {
         $test = new Test();
 
-        $form = $this->createForm(TestType::class);
+        $form = $this->createForm(TestType::class, $test);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) return $this->redirectToRoute('app_new_test');
-
+        if ($form->isSubmitted() && $form->isValid()) {
+            dd($form->getData());
+        }
 
         return $this->render('new_test/new_test.html.twig', [
             'form' => $form->createView()
