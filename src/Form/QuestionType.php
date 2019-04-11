@@ -12,9 +12,9 @@ class QuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('questionTitle', null, [
+            ->add('title', null, [
                 'attr' => [
-                    'placeholder' => 'Pytanie 1...'
+                    'placeholder' => 'Pytanie...'
                 ]
             ])
             ->add('answer1', null, [

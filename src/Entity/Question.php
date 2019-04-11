@@ -19,7 +19,7 @@ class Question
     /**
      * @ORM\Column(type="text")
      */
-    private $questionTitle;
+    private $title;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -52,14 +52,14 @@ class Question
         return $this->id;
     }
 
-    public function getQuestionTitle(): ?string
+    public function getTitle(): ?string
     {
-        return $this->questionTitle;
+        return $this->title;
     }
 
-    public function setQuestionTitle(string $questionTitle): self
+    public function setTitle(string $title): self
     {
-        $this->questionTitle = $questionTitle;
+        $this->title = $title;
 
         return $this;
     }

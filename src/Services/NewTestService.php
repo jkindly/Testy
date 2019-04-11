@@ -19,6 +19,7 @@ class NewTestService
 {
     private $em;
     private $security;
+    private $test;
 
     public function __construct(EntityManagerInterface $em, Security $security)
     {
@@ -29,13 +30,18 @@ class NewTestService
     public function create(string $testName)
     {
         $user = $this->security->getUser();
-        $test = new Test();
-        $test
+        $this->test = new Test();
+        $this->test
             /** @var User|Security $user */
             ->setUser($user)
             ->setName($testName)
         ;
-        $this->em->persist($test);
+        $this->em->persist($this->test);
         $this->em->flush();
+    }
+
+    public function getCurrentTest()
+    {
+        return $this->test;
     }
 }

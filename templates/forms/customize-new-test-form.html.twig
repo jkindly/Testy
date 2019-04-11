@@ -1,4 +1,47 @@
-<h3>{{ testName }}</h3>
-<p class="student-details">Imię</p>
-<p class="student-details">Nazwisko</p>
-<p class="student-details">Nr indeksu</p>
+{{ form_start(form) }}
+<h4>{{ form_widget(form.name) }} <i class="fas fa-edit"></i></h4>
+{{ form_widget(form.description) }}
+<div class="test-upper-informations">
+    <table class="student-details">
+        <tr>
+            <td>Imię i nazwisko</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Nr indeksu</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Kierunek</td>
+            <td style="width: 200px"></td>
+        </tr>
+    </table>
+    <table class="student-details">
+        <tr>
+            <td>Ilość punktów</td>
+            <td style="width: 100px"></td>
+        </tr>
+    </table>
+</div>
+{% import _self as macro %}
+{% macro information_prototype(question) %}
+    <div class="question-edit-mode">
+        {{ form_widget(question.title, {'attr': {'class': 'input-test input-test-question'}}) }}
+        <div title="Usuń pytanie" class="remove-question"><i class="fas fa-times-circle"></i></div>
+        {{ form_widget(question.answer1, {'attr': {'class': 'input-test input-test-answer'}}) }}
+        {{ form_widget(question.answer2, {'attr': {'class': 'input-test input-test-answer'}}) }}
+        {{ form_widget(question.answer3, {'attr': {'class': 'input-test input-test-answer'}}) }}
+        {{ form_widget(question.answer4, {'attr': {'class': 'input-test input-test-answer'}}) }}
+    </div>
+{% endmacro %}
+<div class="test-questions" data-prototype="{{ macro.information_prototype(form.questions.vars.prototype)|e('html_attr')  }}">
+    {% for question in form.questions %}
+        {{ macro.information_prototype(question) }}
+    {% endfor %}
+    <div class="add-next-question">
+        <i class="fas fa-plus"></i>
+        Dodaj pytanie
+    </div>
+</div>
+<button id="add-new-test-btn" type="submit">Utwórz test</button>
+{{ form_end(form) }}

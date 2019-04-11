@@ -37,7 +37,7 @@ $(function(){
             },
             success: function(data) {
                if (data['status'] === 'form_valid') content.addClass('test-editing');
-               content.html(data['content']);
+               content.html(data['content']).slideDown(300);
                console.log(data);
             },
             error: function() {
@@ -51,20 +51,27 @@ $(function(){
         });
     });
 
-    // let addNewQuestion = $('<div class="add-next-question"><i class="fas fa-plus"></i>Dodaj kolejne pytanie</div>');
-
     var $collectionHolder = $('.test-questions');
 
     $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
-    $('.add-next-question').on('click', function() {
+    $('.create-new-test').on('click', '.add-next-question', function() {
         addQuestionForm($collectionHolder);
     });
 
+    $('.create-new-test').on('click', '.remove-question', function() {
+        $(this).parent().remove();
+    });
+
+    $('.remove-question').children().on('click', function() {
+        console.log('clicked');
+        $(this).parent().remove();
+    });
+
     function addQuestionForm($collectionHolder) {
-        var prototype = $('.test-questions').data('prototype');
-        var index = $collectionHolder.data('index');
-        var newForm = prototype;
+        let prototype = $('.test-questions').data('prototype');
+        let index = $collectionHolder.data('index');
+        let newForm = prototype;
 
         newForm = newForm.replace(/__name__/g, index);
 

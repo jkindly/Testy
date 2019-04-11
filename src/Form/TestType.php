@@ -17,14 +17,22 @@ class TestType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-//        $builder
-//            ->add('name', TextType::class, [
-//                'label' => false,
-//                'attr' => [
-//                    'class' => 'input-test',
-//                ],
-//            ])
-//        ;
+        $builder
+            ->add('name', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'input-test',
+                    'placeholder' => 'Wprowadź nazwę'
+                ],
+            ])
+            ->add('description', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'class' => 'input-test input-test-description',
+                    'placeholder' => 'Wprowadź opis testu, dodatkowe informacje',
+                ],
+            ])
+        ;
         $builder
             ->add('questions', CollectionType::class, [
                 'entry_type' => QuestionType::class,
@@ -32,6 +40,7 @@ class TestType extends AbstractType
                 'allow_add' => true,
                 'allow_delete' => true,
                 'label' => false,
+                'by_reference' => false,
             ])
         ;
 //            ->add('category', EntityType::class, [
