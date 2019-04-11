@@ -1,10 +1,10 @@
 {{ form_start(form, {'attr': {id: 'new-test-form'}}) }}
-    {{ form_label(form.name) }}
-    {{ form_widget(form.name, {'attr': {placeholder: 'Wprowadź nazwę'} }) }}
+{{ form_widget(form.name) }}
     <div class="new-test-error">
         {% for error in form.name.vars.errors %}
             <span>{{ error.message }}</span>
         {% endfor %}
     </div>
     <button type="submit" class="new-test-btn">Utwórz</button>
-{{ form_end(form) }}
+{{ form_widget(form._token) }}
+{{ form_end(form, {'render_rest': false}) }}

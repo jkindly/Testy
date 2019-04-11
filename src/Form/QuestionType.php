@@ -45,6 +45,7 @@ class QuestionType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Question::class,
             'label' => false,
+            'validation_groups' => ['test_questions'],
         ]);
     }
 }

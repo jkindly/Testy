@@ -42,7 +42,7 @@ class NewTestController extends AbstractController
     /**
      * @Route("/ajaxAction/new/test")
      */
-    public function ajaxActionNewTest(Request $request, NewTestService $newTest)
+    public function ajaxActionNewTest(Request $request)
     {
         if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_new_test');
 
@@ -55,16 +55,11 @@ class NewTestController extends AbstractController
         ];
 
         if ($form->isValid()) {
-            $testName = $request->request->get('test')['name'];
-            $newTest->create($testName);
-
             $response = [
                 'status' => 'form_valid',
                 'content' => $this->render('forms/customize-new-test-form.html.twig', [
-                    'testName' => $testName,
                     'form' => $form->createView()
                 ])->getContent(),
-                'test' => $newTest->getCurrentTest(),
             ];
 
             return new JsonResponse($response);
@@ -74,14 +69,22 @@ class NewTestController extends AbstractController
     }
 
     /**
-     * @Route("/ajaxAction/add/questions")
+     * @Route("/ajaxAction/insert/new-test")
      */
-    public function ajaxAddNewQuestions(Request $request)
+    public function ajaxAddNewQuestions(Request $request, NewTestService $newTest)
     {
         if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_new_test');
 
-
         $data = $request->request->get('test');
+        $form = $this->createForm(TestType::class);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            return new JsonResponse('valid');
+        } else {
+            return new JsonResponse('invalid');
+        }
+//        $newTest->create($form);
 
         return new JsonResponse($data);
     }

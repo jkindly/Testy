@@ -27,14 +27,18 @@ class NewTestService
         $this->security = $security;
     }
 
-    public function create(string $testName)
+    public function create($data)
     {
+        $testName = $data['name'];
+        $description = $data['description'];
+
         $user = $this->security->getUser();
         $this->test = new Test();
         $this->test
             /** @var User|Security $user */
             ->setUser($user)
             ->setName($testName)
+            ->setDescription($description)
         ;
         $this->em->persist($this->test);
         $this->em->flush();

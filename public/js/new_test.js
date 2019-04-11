@@ -36,9 +36,10 @@ $(function(){
                // loading.show();
             },
             success: function(data) {
+               console.log(data['status']);
+                // console.log(data);
                if (data['status'] === 'form_valid') content.addClass('test-editing');
                content.html(data['content']).slideDown(300);
-               console.log(data);
             },
             error: function() {
                form.html('Wystąpił błąd, spróbuj ponownie');
@@ -80,25 +81,21 @@ $(function(){
         $('.add-next-question').before(newForm);
     }
 
-
-
-
-
-    // $('#questions-form').on('click', '#add-new-test-btn', function(e) {
-    //     e.preventDefault();
-    //     let formData = $('.input-test-answer').val();
-    //     console.log(formData);
-    //     $.ajax({
-    //         url: '/ajaxAction/add/questions',
-    //         dataType: 'json',
-    //         method: 'POST',
-    //         data: formData,
-    //         async: true,
-    //         cache: false,
-    //         success: function(data) {
-    //             console.log(data)
-    //         }
-    //     });
-    // });
+    $('.create-new-test').on('click', '#add-new-test-btn', function(e) {
+        e.preventDefault();
+        let formData = $(this).parent().serializeObject();
+        // console.log(formData);
+        $.ajax({
+            url: '/ajaxAction/insert/new-test',
+            dataType: 'json',
+            method: 'POST',
+            data: formData,
+            async: true,
+            cache: false,
+            success: function(data) {
+                console.log(data)
+            }
+        });
+    });
 
 });

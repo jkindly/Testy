@@ -31,6 +31,7 @@ class TestType extends AbstractType
                     'class' => 'input-test input-test-description',
                     'placeholder' => 'Wprowadź opis testu, dodatkowe informacje',
                 ],
+                'required' => false,
             ])
         ;
         $builder
@@ -63,7 +64,7 @@ class TestType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Test::class,
-            'validation_groups' => ['test_name'],
+            'validation_groups' => ['test_name', 'test_questions'],
             'translation_domain' => 'form',
         ]);
     }
