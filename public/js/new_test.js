@@ -37,7 +37,6 @@ $(function(){
             },
             success: function(data) {
                console.log(data['status']);
-                // console.log(data);
                if (data['status'] === 'form_valid') content.addClass('test-editing');
                content.html(data['content']).slideDown(300);
             },
@@ -52,32 +51,31 @@ $(function(){
         });
     });
 
-    var $collectionHolder = $('.test-questions');
-
-    $collectionHolder.data('index', $collectionHolder.find(':input').length);
+    var collectionHolder = $('.test-questions');
+    var questionCount;
 
     $('.create-new-test').on('click', '.add-next-question', function() {
-        addQuestionForm($collectionHolder);
+        // $collectionHolder.data('index', $('.question-edit-mode').length);
+        // console.log($collectionHolder.data('index'));
+        questionCount = $('.question-edit-mode').length;
+        addQuestionForm();
     });
 
     $('.create-new-test').on('click', '.remove-question', function() {
         $(this).parent().remove();
     });
 
-    $('.remove-question').children().on('click', function() {
-        console.log('clicked');
-        $(this).parent().remove();
-    });
+    function addQuestionForm() {
+        // let prototype = $('.test-questions').data('prototype');
+        // let index = $collectionHolder.data('index');
+        let newForm = $('.test-questions').data('prototype');
+        // console.log('Index ' + questionCount);
+        // let newForm = prototype;
 
-    function addQuestionForm($collectionHolder) {
-        let prototype = $('.test-questions').data('prototype');
-        let index = $collectionHolder.data('index');
-        let newForm = prototype;
+        newForm = newForm.replace(/__name__/g, questionCount);
 
-        newForm = newForm.replace(/__name__/g, index);
-
-        $collectionHolder.data('index', index + 1);
-
+        // $collectionHolder.data('index', index + 1);
+        questionCount += 1;
         $('.add-next-question').before(newForm);
     }
 

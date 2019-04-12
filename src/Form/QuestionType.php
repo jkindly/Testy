@@ -13,8 +13,10 @@ class QuestionType extends AbstractType
     {
         $builder
             ->add('title', null, [
+                'required' => true,
                 'attr' => [
-                    'placeholder' => 'Pytanie...'
+                    'placeholder' => 'Pytanie...',
+                    'required' => true,
                 ]
             ])
             ->add('answer1', null, [

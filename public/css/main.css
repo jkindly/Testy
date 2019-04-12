@@ -345,7 +345,7 @@ main {
 }
 
 .test-editing > h4 > .fa-edit {
-    color: red;
+    color: var(--def-red);
     cursor: pointer;
 }
 

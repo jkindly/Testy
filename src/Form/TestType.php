@@ -25,7 +25,7 @@ class TestType extends AbstractType
                     'placeholder' => 'Wprowadź nazwę'
                 ],
             ])
-            ->add('description', TextType::class, [
+            ->add('description', TextareaType::class, [
                 'label' => false,
                 'attr' => [
                     'class' => 'input-test input-test-description',
@@ -42,6 +42,7 @@ class TestType extends AbstractType
                 'allow_delete' => true,
                 'label' => false,
                 'by_reference' => false,
+                'validation_groups' => 'test_questions',
             ])
         ;
 //            ->add('category', EntityType::class, [
@@ -64,7 +65,7 @@ class TestType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Test::class,
-            'validation_groups' => ['test_name', 'test_questions'],
+            'validation_groups' => ['test_name'],
             'translation_domain' => 'form',
         ]);
     }

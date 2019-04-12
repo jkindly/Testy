@@ -80,7 +80,8 @@ class NewTestController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            return new JsonResponse('valid');
+            $newTest->create($data);
+            return new JsonResponse($data);
         } else {
             return new JsonResponse('invalid');
         }

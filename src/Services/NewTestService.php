@@ -9,6 +9,7 @@
 namespace App\Services;
 
 
+use App\Entity\Question;
 use App\Entity\Test;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
@@ -19,7 +20,6 @@ class NewTestService
 {
     private $em;
     private $security;
-    private $test;
 
     public function __construct(EntityManagerInterface $em, Security $security)
     {
@@ -33,19 +33,32 @@ class NewTestService
         $description = $data['description'];
 
         $user = $this->security->getUser();
-        $this->test = new Test();
-        $this->test
+        $test = new Test();
+        $test
             /** @var User|Security $user */
             ->setUser($user)
             ->setName($testName)
             ->setDescription($description)
         ;
-        $this->em->persist($this->test);
-        $this->em->flush();
-    }
 
-    public function getCurrentTest()
-    {
-        return $this->test;
+        if (!empty($data['questions'])) {
+            foreach ($data['questions'] as $question) {
+                if (!trim($question['title']) == '') {
+                    $newQuestion = new Question();
+                    $newQuestion
+                        ->setTitle($question['title'])
+                        ->setAnswer1($question['answer1'])
+                        ->setAnswer2($question['answer2'])
+                        ->setAnswer3($question['answer3'])
+                        ->setAnswer4($question['answer4'])
+                        ->setTest($test)
+                    ;
+                    $this->em->persist($newQuestion);
+                }
+            }
+        }
+
+        $this->em->persist($test);
+        $this->em->flush();
     }
 }
