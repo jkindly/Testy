@@ -1,33 +1,33 @@
 {{ form_start(form, {'attr': {'id': 'new-test-form'}}) }}
-<h4>{{ form_widget(form.name) }} <i class="fas fa-edit"></i></h4>
+<h4>{{ form_widget(form.name) }}</h4>
 <div class="new-test-error">
     {% for error in form.name.vars.errors %}
         <span>{{ error.message }}</span>
     {% endfor %}
 </div>
 {{ form_widget(form.description) }}
-<div class="test-upper-informations">
-    <table class="student-details">
-        <tr>
-            <td>Imię i nazwisko</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Nr indeksu</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Kierunek</td>
-            <td style="width: 200px"></td>
-        </tr>
-    </table>
-    <table class="student-details">
-        <tr>
-            <td>Ilość punktów</td>
-            <td style="width: 100px"></td>
-        </tr>
-    </table>
-</div>
+{#<div class="test-upper-informations">#}
+{#    <table class="student-details">#}
+{#        <tr>#}
+{#            <td>Imię i nazwisko</td>#}
+{#            <td></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>Nr indeksu</td>#}
+{#            <td></td>#}
+{#        </tr>#}
+{#        <tr>#}
+{#            <td>Kierunek</td>#}
+{#            <td style="width: 200px"></td>#}
+{#        </tr>#}
+{#    </table>#}
+{#    <table class="student-details">#}
+{#        <tr>#}
+{#            <td>Ilość punktów</td>#}
+{#            <td style="width: 100px"></td>#}
+{#        </tr>#}
+{#    </table>#}
+{#</div>#}
 {% import _self as macro %}
 {% macro information_prototype(question) %}
     <div class="question-edit-mode">
@@ -53,5 +53,5 @@
         Dodaj pytanie
     </div>
 </div>
-<button id="add-new-test-btn" type="submit">Utwórz test</button>
+<button id="add-new-test-btn" class="test-btn" type="submit">Zapisz</button>
 {{ form_end(form) }}

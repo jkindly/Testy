@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Question;
 use App\Entity\Test;
 use App\Form\TestType;
+use App\Repository\TestRepository;
 use App\Services\NewTestService;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
@@ -15,6 +16,19 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class NewTestController extends AbstractController
 {
+    /**
+     * @Route("/test/view")
+     */
+    public function testView()
+    {
+        $test = $this->getDoctrine()->getRepository(Test::class)
+            ->findOneBy(['id' => 22]);
+
+        return $this->render('test/test_view.html.twig', [
+            'test' => $test
+        ]);
+    }
+
    /**
      * @Route("/new/test", name="app_new_test")
      */
@@ -34,7 +48,7 @@ class NewTestController extends AbstractController
 //            $em->flush();
 //        }
 
-        return $this->render('new_test/new_test.html.twig', [
+        return $this->render('test/new_test.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -76,16 +90,8 @@ class NewTestController extends AbstractController
         if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_new_test');
 
         $data = $request->request->get('test');
-        $form = $this->createForm(TestType::class);
-        $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $newTest->create($data);
-            return new JsonResponse($data);
-        } else {
-            return new JsonResponse('invalid');
-        }
-//        $newTest->create($form);
+        $newTest->create($data);
 
         return new JsonResponse($data);
     }

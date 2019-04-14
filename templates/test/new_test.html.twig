@@ -13,7 +13,7 @@
                     <span>{{ error.message }}</span>
                 {% endfor %}
             </div>
-            <button type="submit" class="new-test-btn">Utwórz</button>
+            <button type="submit" class="test-btn" id="new-test-btn">Utwórz</button>
             {{ form_widget(form._token) }}
             {{ form_end(form, {'render_rest': false}) }}
         </div>

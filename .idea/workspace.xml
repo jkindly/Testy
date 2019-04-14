@@ -2,13 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3106b4f-5d72-4569-bc13-47b28bf1611e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/test/test_view.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/new_test.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/new_test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/NewTestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/NewTestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/QuestionType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/QuestionType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/TestType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TestType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/NewTestService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/NewTestService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forms/create-new-test-form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/create-new-test-form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forms/customize-new-test-form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/customize-new-test-form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/new_test/new_test.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test/new_test.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,14 +25,44 @@
     <pharConfigPath>$PROJECT_DIR$/skeleton/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7122166">
+    <splitter split-orientation="horizontal" split-proportion="0.69974715">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/new_test/new_test.html.twig">
+            <entry file="file://$PROJECT_DIR$/templates/test/new_test.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+                <state relative-caret-position="105">
+                  <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/forms/create-new-test-form.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="189">
+                  <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/forms/customize-new-test-form.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="483">
+                  <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/test/test_view.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="210">
+                  <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#12#26#0#Twig" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -35,11 +70,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/new_test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-552">
-                  <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#103#524#0" />
-                  </folding>
+                <state relative-caret-position="651">
+                  <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -47,47 +79,34 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller/NewTestController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="531">
-                  <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+                <state relative-caret-position="503">
+                  <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
                   <folding>
                     <element signature="e#34#58#0#PHP" expanded="true" />
+                    <element signature="e#594#620#1#PHP" expanded="true" />
+                    <element signature="e#1127#1152#0#PHP" expanded="true" />
+                    <element signature="e#1622#1660#0#PHP" expanded="true" />
                     <element signature="e#1864#1905#0#PHP" expanded="true" />
+                    <element signature="e#2342#2356#1#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Services/NewTestService.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="462">
-                  <caret line="48" column="54" lean-forward="true" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
-                  <folding>
-                    <element signature="e#113#137#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/forms/customize-new-test-form.html.twig">
-              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Form/QuestionType.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="715">
-                  <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+                <state relative-caret-position="798">
+                  <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Entity/Question.php">
+            <entry file="file://$PROJECT_DIR$/src/Entity/Test.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
+                <state relative-caret-position="168">
+                  <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
@@ -95,8 +114,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Form/TestType.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1198">
-                  <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+                <state relative-caret-position="1218">
+                  <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
                 </state>
               </provider>
             </entry>
@@ -104,12 +123,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+        <leaf>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/css/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="689">
-                  <caret line="345" selection-start-line="345" selection-end-line="345" />
+                <state relative-caret-position="763">
+                  <caret line="525" column="22" selection-start-line="525" selection-start-column="22" selection-end-line="525" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -137,7 +156,14 @@
       <find>remove</find>
       <find>load</find>
       <find>create-new-test</find>
+      <find>add</find>
+      <find>add-new-tes</find>
+      <find>new-test-btn</find>
       <find>test</find>
+      <find>test-editi</find>
+      <find>test-questions</find>
+      <find>question-edit</find>
+      <find>test-edit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,17 +195,19 @@
         <option value="$PROJECT_DIR$/templates/forms/customize-&#10;            -test-form.html.twig" />
         <option value="$PROJECT_DIR$/templates/MyViews/question-prototype.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
-        <option value="$PROJECT_DIR$/templates/forms/create-new-test-form.html.twig" />
-        <option value="$PROJECT_DIR$/templates/new_test/new_test.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/QuestionType.php" />
-        <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/src/Form/TestType.php" />
         <option value="$PROJECT_DIR$/src/Entity/Test.php" />
         <option value="$PROJECT_DIR$/src/Entity/Question.php" />
+        <option value="$PROJECT_DIR$/src/Services/NewTestService.php" />
+        <option value="$PROJECT_DIR$/templates/new_test/new_test.html.twig" />
         <option value="$PROJECT_DIR$/templates/forms/customize-new-test-form.html.twig" />
         <option value="$PROJECT_DIR$/public/js/new_test.js" />
+        <option value="$PROJECT_DIR$/templates/forms/create-new-test-form.html.twig" />
+        <option value="$PROJECT_DIR$/templates/test/new_test.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/NewTestController.php" />
-        <option value="$PROJECT_DIR$/src/Services/NewTestService.php" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
+        <option value="$PROJECT_DIR$/templates/test/test_view.html.twig" />
       </list>
     </option>
   </component>
@@ -225,63 +253,81 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Testy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Testy" type="462c0819:PsiDirectoryNode" />
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="forms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testy" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -334,21 +380,22 @@
       <workItem from="1554916283834" duration="4161000" />
       <workItem from="1554967743272" duration="16571000" />
       <workItem from="1555059451827" duration="5762000" />
+      <workItem from="1555164690566" duration="7380000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90103000" />
+    <option name="totallyTimeSpent" value="97498000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="-1" width="1920" height="1040" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15581644" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286026" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32779622" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -550,20 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/forms/create-new-test-form.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="345" selection-start-line="345" selection-end-line="345" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/form/Extension/Core/Type/FormType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-759">
@@ -578,71 +611,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/QuestionType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="47" column="31" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/TestType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1198">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/forms/customize-new-test-form.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/NewTestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-            <element signature="e#1864#1905#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Question.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/new_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552">
-          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+        <state relative-caret-position="420">
+          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
           <folding>
-            <element signature="e#103#524#0" />
+            <element signature="e#30#62#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/new_test/new_test.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Services/NewTestService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="48" column="54" lean-forward="true" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+        <state relative-caret-position="672">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/TestType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1218">
+          <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/new_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forms/create-new-test-form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/test/new_test.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/TestRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/NewTestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
           <folding>
-            <element signature="e#113#137#0#PHP" expanded="true" />
+            <element signature="e#34#58#0#PHP" expanded="true" />
+            <element signature="e#594#620#1#PHP" expanded="true" />
+            <element signature="e#1127#1152#0#PHP" expanded="true" />
+            <element signature="e#1622#1660#0#PHP" expanded="true" />
+            <element signature="e#1864#1905#0#PHP" expanded="true" />
+            <element signature="e#2342#2356#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/QuestionType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forms/customize-new-test-form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="525" column="22" selection-start-line="525" selection-start-column="22" selection-end-line="525" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/test/test_view.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -328,7 +328,7 @@ main {
 .test-editing {
     margin: 0 auto;
     border: 1px solid black;
-    height: 297mm;
+    /*height: 297mm;*/
     width: 210mm;
     background-color: #fff;
     padding: 5px;
@@ -368,19 +368,24 @@ main {
     margin-top: 20px;
     text-align: left;
     font-style: italic;
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
 }
 
 .question-edit-mode {
     position: relative;
-    width: 240px;
+    flex: 0 50%;
+    /*width: 50%;*/
     margin-bottom: 10px;
+    text-align: center;
     /*border: 1px solid black;*/
 }
 
 .remove-question {
     font-size: 2.5rem;
     position: absolute;
-    right: 0;
+    right: 13%;
     top: 1px;
     color: var(--def-red);
     cursor: pointer;
@@ -395,6 +400,7 @@ main {
     -moz-border-radius: 5px;
     border-radius: 5px;
     width: 110px;
+    height: 20px;
     color: #fff;
     padding: 5px;
     cursor: pointer;
@@ -441,12 +447,13 @@ main {
     width: 90%;
     font-size: 1.2rem;
     resize: vertical;
+    font-style: italic;
 }
 
 .input-test-question {
     text-align: left;
     display: block;
-    width: 200px;
+    max-width: 300px;
     height: 20px;
     font-style: italic;
     font-size: 1.4rem;
@@ -456,7 +463,7 @@ main {
     text-align: left;
     margin-left: 10px;
     display: block;
-    width: 150px;
+    max-width: 320px;
     height: 20px;
     font-size: 1.4rem;
 }
@@ -465,9 +472,9 @@ main {
     border: 1px solid #000;
 }
 
-.new-test-btn {
+.test-btn {
     margin-top: 10px;
-    width: 100px;
+    /*width: 100px;*/
     height: 30px;
     background-color: var(--def-red);
     color: #fff;
@@ -487,10 +494,34 @@ button::-moz-focus-inner {
     border: 0;
 }
 
-.new-test-btn:hover {
+.test-btn:hover {
     background-color: var(--def-red-hover);
 }
 
 .new-test-error {
     color: var(--def-red);
+}
+
+.test-view-container {
+    margin: 20px auto 0 auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.test-view {
+    margin: 0 auto;
+    border: 1px solid black;
+    /*height: 297mm;*/
+    width: 210mm;
+    background-color: #fff;
+    padding: 5px;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /*display: none;*/
+}
+
+.test-name {
+    font-size: 2.4rem;
 }

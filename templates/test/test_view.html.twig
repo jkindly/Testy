@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="test-view-container">
+    <div class="test-view">
+        <div class="test-name">
+            {{ test.name }}
+        </div>
+        <div class="test-description">
+            {{ test.description|markdown }}
+        </div>
+        {% for question in test.questions %}
+            {{ question.title }}
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

@@ -18,7 +18,7 @@ $(function(){
     };
 
     // Tworzenie nowego Testu (ajax)
-    $('.create-new-test').on('click', '.new-test-btn', function(e) {
+    $('.create-new-test').on('click', '#new-test-btn', function(e) {
         e.preventDefault();
         let form = $('#new-test-form');
         let content = $('.create-new-test');
@@ -63,6 +63,7 @@ $(function(){
 
     $('.create-new-test').on('click', '.remove-question', function() {
         $(this).parent().remove();
+        questionCount -= 1;
     });
 
     function addQuestionForm() {
