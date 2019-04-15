@@ -32,6 +32,14 @@
                 </div>
             </div>
         </header>
+        <nav>
+            <i class="fas fa-caret-left"></i>
+            <div class="nav-links">
+                <div class="nav-link"><a href="{{ path('app_new_test') }}"><i class="fas fa-plus"></i> Nowy test</a></div>
+                <div class="nav-link"><a href="#"><i class="far fa-file-alt"></i> Twoje testy</a></div>
+                <div class="nav-link"><a href="#"><i class="fas fa-cog"></i> Ustawienia</a></div>
+            </div>
+        </nav>
         <div class="container">
             <main>
                 {% block body %}{% endblock %}

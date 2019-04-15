@@ -8,11 +8,41 @@
             {{ test.name }}
         </div>
         <div class="test-description">
-            {{ test.description|markdown }}
+            {{ test.description|nl2br }}
         </div>
-        {% for question in test.questions %}
-            {{ question.title }}
-        {% endfor %}
+        <div class="test-upper-informations">
+            <table class="student-details">
+                <tr>
+                    <td>Imię i nazwisko</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Nr indeksu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kierunek</td>
+                    <td style="width: 200px"></td>
+                </tr>
+            </table>
+            <table class="student-details">
+                <tr>
+                    <td>Ilość punktów</td>
+                    <td style="width: 100px"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="test-questions">
+            {% for question in test.questions %}
+                <div class="test-question">
+                        <div>{{ question.title }}</div>
+                        <div>{{ question.answer1 }}</div>
+                        <div>{{ question.answer2 }}</div>
+                        <div>{{ question.answer3 }}</div>
+                        <div>{{ question.answer4 }}</div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 
