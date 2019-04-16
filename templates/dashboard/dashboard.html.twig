@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div class="test-name-inside">
-                            {{ test.name }}
+                            {{ test.name|wordwrap(28)|truncate(40) }}
                         </div>
                     </div>
                 {% endfor %}

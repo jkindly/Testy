@@ -28,19 +28,21 @@ class AppFixtures extends Fixture
             ->setPassword($this->passwordEncoder->encodePassword($user, 'mnkctnob'))
             ->setUsername('jakub.kozupa');
 
-        $test = new Test();
-        $test
-            ->setName('Funkcje kwadratowe')
-            ->setUser($user)
-            ->setDescription('
+        for ($i=0; $i<10; $i++) {
+            $test = new Test();
+            $test
+                ->setName('Funkcje kwadratowe')
+                ->setUser($user)
+                ->setDescription('
                 Test składa się z 20 pytań zamkniętych, w których tylko jedna odpowiedź jest
                 prawidłowa.
                 Zaliczenie od 10 punktów (maks 20 pkt)
             ')
-        ;
+            ;
+            $manager->persist($test);
+        }
 
         $manager->persist($user);
-        $manager->persist($test);
         $manager->flush();
 
 //        $category = new Category();

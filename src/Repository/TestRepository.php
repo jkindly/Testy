@@ -28,7 +28,7 @@ class TestRepository extends ServiceEntityRepository
             ->andWhere('t.user = :user')
             ->setParameter('user', $user)
             ->orderBy('t.createdAt', 'ASC')
-            ->setMaxResults(3)
+            ->setMaxResults(6)
             ->getQuery()
             ->getResult()
         ;
