@@ -304,14 +304,14 @@ main {
 
 .your-tests {
     /*border: 1px solid red;*/
-    width: 700px;
+    width: 800px;
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
 }
 
 .test {
-    width: 300px;
+    width: 250px;
     /*height: 150px;*/
     border: 1px solid var(--def-red-border);
     margin-bottom: 50px;
@@ -334,7 +334,7 @@ main {
 
 .test-name-inside {
     /*width: 100%;*/
-    min-width: 300px;
+    min-width: 250px;
     height: 50px;
     color: #fff;
     background-color: var(--def-red);

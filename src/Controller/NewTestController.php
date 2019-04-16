@@ -23,7 +23,7 @@ class NewTestController extends AbstractController
     public function testView()
     {
         $test = $this->getDoctrine()->getRepository(Test::class)
-            ->findOneBy(['id' => 55]);
+            ->findOneBy(['id' => 24]);
 
         return $this->render('test/test_view.html.twig', [
             'test' => $test,
