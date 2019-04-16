@@ -312,11 +312,40 @@ main {
 
 .test {
     width: 300px;
-    height: 300px;
-    border: 1px solid black;
+    /*height: 150px;*/
+    border: 1px solid var(--def-red-border);
     margin-bottom: 50px;
     background-color: #fff;
-    font-size: 1rem;
+    font-size: 1.6rem;
+    position: relative;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.test-inside {
+    margin-bottom: 5px;
+}
+
+.test-inside-informations {
+    display: none;
+}
+
+.test-name-inside {
+    /*width: 100%;*/
+    height: 50px;
+    color: #fff;
+    background-color: var(--def-red);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word;
+}
+
+.test-updated-inside {
+
 }
 
 .create-new-test-container {

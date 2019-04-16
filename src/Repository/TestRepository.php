@@ -19,6 +19,9 @@ class TestRepository extends ServiceEntityRepository
         parent::__construct($registry, Test::class);
     }
 
+    /**
+     * @return Test[]
+     */
     public function findLast3Tests($user)
     {
         return $this->createQueryBuilder('t')

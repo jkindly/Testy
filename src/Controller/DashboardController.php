@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\TestRepository;
+use App\Entity\Test;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,8 +13,8 @@ class DashboardController extends AbstractController
      */
     public function dashboard()
     {
-        $lastEdited = $this->getDoctrine()->getRepository(TestRepository::class)
-            ->find
+        $lastEdited = $this->getDoctrine()->getRepository(Test::class)
+            ->findLast3Tests($this->getUser());
 
         return $this->render('dashboard/dashboard.html.twig', [
             'lastEdited' => $lastEdited
