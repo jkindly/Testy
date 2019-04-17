@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block title %}Edytuj test{% endblock %}
+
+{% block body %}
+    <section class="create-new-test-container">
+        <div class="create-new-test test-editing" style="display: block">
+            {{ form_start(form, {'attr': {'id': 'new-test-form'}}) }}
+            <h4>{{ form_widget(form.name, {'attr': {'value': test.name}}) }}</h4>
+            <div class="new-test-error">
+                {% for error in form.name.vars.errors %}
+                    <span>{{ error.message }}</span>
+                {% endfor %}
+            </div>
+            {{ form_widget(form.description, {'value': test.description}) }}
+            {% import _self as macro %}
+            {% macro information_prototype(question) %}
+                <div class="question-edit-mode">
+                    {{ form_widget(question.title, {'attr': {'class': 'input-test input-test-question'}}) }}
+                    <div class="new-test-error">
+                        {% for error in question.title.vars.errors %}
+                            <span>{{ error.message }}</span>
+                        {% endfor %}
+                    </div>
+                    <div title="Usuń pytanie" class="remove-question"><i class="fas fa-times-circle"></i></div>
+                    {{ form_widget(question.answer1, {'attr': {'class': 'input-test input-test-answer'}}) }}
+                    {{ form_widget(question.answer2, {'attr': {'class': 'input-test input-test-answer'}}) }}
+                    {{ form_widget(question.answer3, {'attr': {'class': 'input-test input-test-answer'}}) }}
+                    {{ form_widget(question.answer4, {'attr': {'class': 'input-test input-test-answer'}}) }}
+                </div>
+            {% endmacro %}
+            <div class="test-questions" data-prototype="{{ macro.information_prototype(form.questions.vars.prototype)|e('html_attr')  }}">
+                {% for question in form.questions %}
+                    {{ macro.information_prototype(question) }}
+                {% endfor %}
+                <div class="add-next-question">
+                    <i class="fas fa-plus"></i>
+                    Dodaj pytanie
+                </div>
+            </div>
+            <button id="add-new-test-btn" class="test-btn" type="submit">Zapisz</button>
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/new_test.js') }}"></script>
+{% endblock %}

@@ -5,35 +5,27 @@
 {% block body %}
     <main>
         <section class="started-tests-container">
-            <h3>Ostatnio edytowane</h3>
-            {#{% for test in lastEdited %}#}
-                {#<div class="test">#}
-                    {#{% include 'test/test_view.html.twig' %}#}
-                {#</div>#}
-            {#{% endfor %}#}
+            <h3>Twoje ostatnie testy</h3>
             <div class="your-tests">
-                {#{% for test in lastEdited %}#}
-                {#<div class="test">#}
-                {#{% include 'test/test_view.html.twig' %}#}
-                {#</div>#}
-                {#{% endfor %}#}
                 {% for test in lastEdited %}
+                <a href="{{ path('app_test_view', {testId: test.id}) }}">
                     <div class="test">
-                        <div class="test-inside-informations">
-                            <div class="test-inside test-updated-inside">
-                                Ostatnia edycja: {{ test.updatedAt|date('d.m.Y H:i') }}
+                            <div class="test-inside-informations">
+                                <div class="test-inside test-updated-inside">
+                                    Ostatnia edycja: {{ test.updatedAt|date('d.m.Y H:i') }}
+                                </div>
+                                <div class="test-inside test-created-inside">
+                                    Utworzony: {{ test.createdAt|date('d.m.Y H:i') }}
+                                </div>
+                                <div class="test-inside test-questions-inside">
+                                    Liczba pytań: {{ test.questions|length }}
+                                </div>
                             </div>
-                            <div class="test-inside test-created-inside">
-                                Utworzony: {{ test.createdAt|date('d.m.Y H:i') }}
+                            <div class="test-name-inside">
+                                {{ test.name|truncate(40) }}
                             </div>
-                            <div class="test-inside test-questions-inside">
-                                Liczba pytań: {{ test.questions|length }}
-                            </div>
-                        </div>
-                        <div class="test-name-inside">
-                            {{ test.name|wordwrap(28)|truncate(40) }}
-                        </div>
                     </div>
+                </a>
                 {% endfor %}
             </div>
         </section>
@@ -41,6 +33,6 @@
 {% endblock %}
 
 {% block javascripts %}
-{{ parent() }}
-<script src="{{ asset('js/dashboard.js') }}"></script>
+    {{ parent() }}
+    <script src="{{ asset('js/dashboard.js') }}"></script>
 {% endblock %}

@@ -27,7 +27,7 @@ class TestRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('t')
             ->andWhere('t.user = :user')
             ->setParameter('user', $user)
-            ->orderBy('t.createdAt', 'ASC')
+            ->orderBy('t.createdAt', 'DESC')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult()

@@ -6,28 +6,6 @@
     {% endfor %}
 </div>
 {{ form_widget(form.description) }}
-{#<div class="test-upper-informations">#}
-{#    <table class="student-details">#}
-{#        <tr>#}
-{#            <td>Imię i nazwisko</td>#}
-{#            <td></td>#}
-{#        </tr>#}
-{#        <tr>#}
-{#            <td>Nr indeksu</td>#}
-{#            <td></td>#}
-{#        </tr>#}
-{#        <tr>#}
-{#            <td>Kierunek</td>#}
-{#            <td style="width: 200px"></td>#}
-{#        </tr>#}
-{#    </table>#}
-{#    <table class="student-details">#}
-{#        <tr>#}
-{#            <td>Ilość punktów</td>#}
-{#            <td style="width: 100px"></td>#}
-{#        </tr>#}
-{#    </table>#}
-{#</div>#}
 {% import _self as macro %}
 {% macro information_prototype(question) %}
     <div class="question-edit-mode">

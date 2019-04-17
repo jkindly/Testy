@@ -1,4 +1,7 @@
 $(function(){
+
+    var createNewTest = $('.create-new-test');
+
     // Funkcja zamieniająca formularz w obiekt
     $.fn.serializeObject = function()
     {
@@ -18,14 +21,14 @@ $(function(){
     };
 
     // Tworzenie nowego Testu (ajax)
-    $('.create-new-test').on('click', '#new-test-btn', function(e) {
+    createNewTest.on('click', '#new-test-btn', function(e) {
         e.preventDefault();
         let form = $('#new-test-form');
         let content = $('.create-new-test');
         let formData = $(this).parent().serializeObject();
         let loading = '<div class="loading"><img src="../img/loading.gif" alt="Ładowanie"></div>';
         $.ajax({
-           url: '/ajaxAction/new/test',
+           url: '/ajaxAction/test/new',
             dataType: 'json',
             method: 'POST',
             data: formData,
@@ -51,17 +54,16 @@ $(function(){
         });
     });
 
-    var collectionHolder = $('.test-questions');
     var questionCount;
 
-    $('.create-new-test').on('click', '.add-next-question', function() {
+    createNewTest.on('click', '.add-next-question', function() {
         // $collectionHolder.data('index', $('.question-edit-mode').length);
         // console.log($collectionHolder.data('index'));
         questionCount = $('.question-edit-mode').length;
         addQuestionForm();
     });
 
-    $('.create-new-test').on('click', '.remove-question', function() {
+    createNewTest.on('click', '.remove-question', function() {
         $(this).parent().remove();
         questionCount -= 1;
     });
@@ -80,7 +82,7 @@ $(function(){
         $('.add-next-question').before(newForm);
     }
 
-    $('.create-new-test').on('click', '#add-new-test-btn', function(e) {
+    createNewTest.on('click', '#add-new-test-btn', function(e) {
         e.preventDefault();
         let formData = $(this).parent().serializeObject();
         // console.log(formData);

@@ -15,51 +15,31 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class NewTestController extends AbstractController
+class TestNewController extends AbstractController
 {
-    /**
-     * @Route("/test/view")
-     */
-    public function testView()
-    {
-        $test = $this->getDoctrine()->getRepository(Test::class)
-            ->findOneBy(['id' => 24]);
-
-        return $this->render('test/test_view.html.twig', [
-            'test' => $test,
-        ]);
-    }
-
    /**
-     * @Route("/new/test", name="app_new_test")
+     * @Route("/test/new", name="app_test_new")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function newTest(Request $request)
+    public function testNew(Request $request)
     {
         $form = $this->createForm(TestType::class);
         $form->handleRequest($request);
 
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $questions = $form->getData()->getQuestions();
-//            foreach ($questions as $question) {
-//                /*** @var Question $question */
-//                $question->setTest($test);
-//                $em->persist($question);
-//            }
-//            $em->persist($test);
-//            $em->flush();
-//        }
-
-        return $this->render('test/new_test.html.twig', [
+        return $this->render('test/test_new.html.twig', [
             'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/ajaxAction/new/test")
+     * @Route("/ajaxAction/test/new")
+     * @param Request $request
+     * @return JsonResponse|\Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function ajaxActionNewTest(Request $request)
     {
-        if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_new_test');
+        if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_test_new');
 
         $form = $this->createForm(TestType::class);
         $form->handleRequest($request);
@@ -85,10 +65,13 @@ class NewTestController extends AbstractController
 
     /**
      * @Route("/ajaxAction/insert/new-test")
+     * @param Request $request
+     * @param NewTestService $newTest
+     * @return JsonResponse|\Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function ajaxAddNewQuestions(Request $request, NewTestService $newTest)
     {
-        if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_new_test');
+        if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_test_new');
 
         $data = $request->request->get('test');
 

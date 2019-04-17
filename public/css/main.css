@@ -314,9 +314,8 @@ main {
     width: 250px;
     /*height: 150px;*/
     border: 1px solid var(--def-red-border);
-    margin-bottom: 50px;
     background-color: #F7F7F7;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     position: relative;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -330,6 +329,7 @@ main {
 
 .test-inside-informations {
     display: none;
+    padding: 0 2px 0 2px;
 }
 
 .test-name-inside {
@@ -347,6 +347,7 @@ main {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .test-updated-inside {
@@ -484,7 +485,7 @@ main {
 }
 
 .input-test-description {
-    height: 20px;
+    height: 60px;
     width: 90%;
     font-size: 1.2rem;
     resize: vertical;
@@ -560,7 +561,17 @@ button::-moz-focus-inner {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    position: relative;
     /*display: none;*/
+}
+
+.edit-this-test {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: var(--def-red);
+    font-size: 3rem;
+    cursor: pointer;
 }
 
 .test-name {
@@ -570,4 +581,10 @@ button::-moz-focus-inner {
 .test-description {
     margin-top: 20px;
     font-size: 1.6rem;
+}
+
+.edit-test-container {
+    margin: 20px auto 0 auto;
+    text-align: center;
+    position: relative;
 }
