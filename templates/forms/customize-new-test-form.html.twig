@@ -1,10 +1,6 @@
 {{ form_start(form, {'attr': {'id': 'new-test-form'}}) }}
 <h4>{{ form_widget(form.name) }}</h4>
-<div class="new-test-error">
-    {% for error in form.name.vars.errors %}
-        <span>{{ error.message }}</span>
-    {% endfor %}
-</div>
+<div class="new-test-error name-error"></div>
 {{ form_widget(form.description) }}
 {% import _self as macro %}
 {% macro information_prototype(question) %}

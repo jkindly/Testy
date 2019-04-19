@@ -28,6 +28,17 @@
                     {{ form_widget(question.answer4, {'attr': {'class': 'input-test input-test-answer'}}) }}
                 </div>
             {% endmacro %}
+            {% for question in form.questions %}
+                asd
+                <div class="question-edit-mode">
+                    {#<textarea id="test_questions___name___title" name="test[questions][__name__][title]" required="required" placeholder="Pytanie..." required="required" class="input-test input-test-question">Pytanie 1</textarea>#}
+                    {#{{ dump(form_widget(form.questions.vars.prototype.children.title, {'value': question.title, 'attr': {'class': 'input-test input-test-question'}}) )}}#}
+                    {#{{ form_widget(formQuestion.answer1, {'value': question.answer1, 'attr': {'class': 'input-test input-test-answer'}}) }}#}
+                    {#{{ form_widget(formQuestion.answer2, {'value': question.answer2, 'attr': {'class': 'input-test input-test-answer'}}) }}#}
+                    {#{{ form_widget(formQuestion.answer3, {'value': question.answer3, 'attr': {'class': 'input-test input-test-answer'}}) }}#}
+                    {#{{ form_widget(formQuestion.answer4, {'value': question.answer4, 'attr': {'class': 'input-test input-test-answer'}}) }}#}
+                </div>
+            {% endfor %}
             <div class="test-questions" data-prototype="{{ macro.information_prototype(form.questions.vars.prototype)|e('html_attr')  }}">
                 {% for question in form.questions %}
                     {{ macro.information_prototype(question) }}

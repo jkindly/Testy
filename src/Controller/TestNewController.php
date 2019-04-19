@@ -73,10 +73,15 @@ class TestNewController extends AbstractController
     {
         if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_test_new');
 
-        $data = $request->request->get('test');
+        $form = $this->createForm(TestType::class);
+        $form->handleRequest($request);
 
-        $newTest->create($data);
+        if ($form->isValid()) {
+            $data = $request->request->get('test');
+            $response = 'form_valid';
+            $newTest->create($data);
+        } else $response = 'form_invalid';
 
-        return new JsonResponse($data);
+        return new JsonResponse($response);
     }
 }

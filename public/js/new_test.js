@@ -1,7 +1,7 @@
 $(function(){
 
     var createNewTest = $('.create-new-test');
-
+    var content = $('.create-new-test');
     // Funkcja zamieniająca formularz w obiekt
     $.fn.serializeObject = function()
     {
@@ -24,7 +24,6 @@ $(function(){
     createNewTest.on('click', '#new-test-btn', function(e) {
         e.preventDefault();
         let form = $('#new-test-form');
-        let content = $('.create-new-test');
         let formData = $(this).parent().serializeObject();
         let loading = '<div class="loading"><img src="../img/loading.gif" alt="Ładowanie"></div>';
         $.ajax({
@@ -94,7 +93,11 @@ $(function(){
             async: true,
             cache: false,
             success: function(data) {
-                console.log(data)
+                if (data === 'form_valid') {
+                    content.html('Pomyślnie utworzono');
+                } else {
+                    $('.name-error').html('Wprowadź nazwę');
+                }
             }
         });
     });

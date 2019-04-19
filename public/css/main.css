@@ -544,6 +544,10 @@ button::-moz-focus-inner {
     color: var(--def-red);
 }
 
+.name-error {
+    margin-top: -20px;
+}
+
 .test-view-container {
     margin: 20px auto 0 auto;
     /*border: 1px solid black;*/
