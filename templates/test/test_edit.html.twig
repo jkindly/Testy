@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% import 'macros/information_prototype.html.twig' as macro %}
 {% block title %}Edytuj test{% endblock %}
 
 {% block body %}
@@ -12,34 +13,19 @@
                 {% endfor %}
             </div>
             {{ form_widget(form.description, {'value': test.description}) }}
-            {% import _self as macro %}
-            {% macro information_prototype(question) %}
-                <div class="question-edit-mode">
-                    {{ form_widget(question.title, {'attr': {'class': 'input-test input-test-question'}}) }}
-                    <div class="new-test-error">
-                        {% for error in question.title.vars.errors %}
-                            <span>{{ error.message }}</span>
-                        {% endfor %}
-                    </div>
-                    <div title="Usuń pytanie" class="remove-question"><i class="fas fa-times-circle"></i></div>
-                    {{ form_widget(question.answer1, {'attr': {'class': 'input-test input-test-answer'}}) }}
-                    {{ form_widget(question.answer2, {'attr': {'class': 'input-test input-test-answer'}}) }}
-                    {{ form_widget(question.answer3, {'attr': {'class': 'input-test input-test-answer'}}) }}
-                    {{ form_widget(question.answer4, {'attr': {'class': 'input-test input-test-answer'}}) }}
-                </div>
-            {% endmacro %}
-            {% for question in form.questions %}
-                asd
-                <div class="question-edit-mode">
-                    {#<textarea id="test_questions___name___title" name="test[questions][__name__][title]" required="required" placeholder="Pytanie..." required="required" class="input-test input-test-question">Pytanie 1</textarea>#}
-                    {#{{ dump(form_widget(form.questions.vars.prototype.children.title, {'value': question.title, 'attr': {'class': 'input-test input-test-question'}}) )}}#}
-                    {#{{ form_widget(formQuestion.answer1, {'value': question.answer1, 'attr': {'class': 'input-test input-test-answer'}}) }}#}
-                    {#{{ form_widget(formQuestion.answer2, {'value': question.answer2, 'attr': {'class': 'input-test input-test-answer'}}) }}#}
-                    {#{{ form_widget(formQuestion.answer3, {'value': question.answer3, 'attr': {'class': 'input-test input-test-answer'}}) }}#}
-                    {#{{ form_widget(formQuestion.answer4, {'value': question.answer4, 'attr': {'class': 'input-test input-test-answer'}}) }}#}
-                </div>
-            {% endfor %}
             <div class="test-questions" data-prototype="{{ macro.information_prototype(form.questions.vars.prototype)|e('html_attr')  }}">
+                {#{% for question in test.questions %}#}
+                    {#<div class="question-edit-mode">#}
+                        {#<textarea id="test_questions_{{ loop.index0 }}_title" name="test[questions][{{ loop.index0 }}][title]" required="required" placeholder="Pytanie..." required="required" class="input-test input-test-question">{{ question.title }}</textarea>#}
+                        {#<div class="new-test-error">#}
+                        {#</div>#}
+                        {#<div title="Usuń pytanie" class="remove-question"><i class="fas fa-times-circle"></i></div>#}
+                        {#<textarea id="test_questions_{{ loop.index0 }}_answer1" name="test[questions][{{ loop.index0 }}][answer1]" placeholder="Odpowiedź A..." class="input-test input-test-answer">{{ question.answer1 }}</textarea>#}
+                        {#<textarea id="test_questions_{{ loop.index0 }}_answer2" name="test[questions][{{ loop.index0 }}][answer2]" placeholder="Odpowiedź B..." class="input-test input-test-answer">{{ question.answer2 }}</textarea>#}
+                        {#<textarea id="test_questions_{{ loop.index0 }}_answer3" name="test[questions][{{ loop.index0 }}][answer3]" placeholder="Odpowiedź C..." class="input-test input-test-answer">{{ question.answer3 }}</textarea>#}
+                        {#<textarea id=T"test_questions_{{ loop.index0 }}_answer4" name="test[questions][{{ loop.index0 }}][answer4]" placeholder="Odpowiedź D..." class="input-test input-test-answer">{{ question.answer4 }}</textarea>#}
+                    {#</div>#}
+                {#{% endfor %}#}
                 {% for question in form.questions %}
                     {{ macro.information_prototype(question) }}
                 {% endfor %}
@@ -48,7 +34,7 @@
                     Dodaj pytanie
                 </div>
             </div>
-            <button id="add-new-test-btn" class="test-btn" type="submit">Zapisz</button>
+            <button id="edit-test-btn" class="test-btn" type="submit">Zapisz</button>
             {{ form_end(form) }}
         </div>
     </section>

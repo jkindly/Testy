@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Podgląd testu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ pathToWeb }}/css/pdf_view.css">
+</head>
+
+<body>
+    <div class="test-view">
+        <div class="test-name">
+            <b>{{ test.name|wordwrap(50) }}</b>
+        </div>
+        <div class="test-description">
+            {{ test.description|nl2br }}
+        </div>
+        <div class="test-upper-informations">
+            <table class="student-details float-left">
+                <tr>
+                    <td>Imię i nazwisko</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Nr indeksu</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kierunek</td>
+                    <td style="width: 200px"></td>
+                </tr>
+            </table>
+            <table class="student-details float-right">
+                <tr>
+                    <td>Ilość punktów</td>
+                    <td style="width: 100px"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="test-questions">
+            {% for question in test.questions %}
+                <div class="test-question">
+                    <div>{{ question.title }}</div>
+                    <div class="test-answer">{{ question.answer1 }}</div>
+                    <div class="test-answer">{{ question.answer2 }}</div>
+                    <div class="test-answer">{{ question.answer3 }}</div>
+                    <div class="test-answer">{{ question.answer4 }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

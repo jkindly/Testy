@@ -557,7 +557,7 @@ button::-moz-focus-inner {
 .test-view {
     margin: 0 auto;
     border: 1px solid black;
-    height: 297mm;
+    /*height: 297mm;*/
     width: 210mm;
     background-color: #fff;
     padding: 5px;
@@ -569,10 +569,37 @@ button::-moz-focus-inner {
     /*display: none;*/
 }
 
+.delete-test {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: var(--def-red);
+    font-size: 3rem;
+    cursor: pointer;
+}
+
 .edit-this-test {
     position: absolute;
     top: 5px;
     right: 5px;
+    color: var(--def-red);
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.pdf-view {
+    position: absolute;
+    top: 5px;
+    right: 50px;
+    color: var(--def-red);
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.pdf-download {
+    position: absolute;
+    top: 5px;
+    right: 85px;
     color: var(--def-red);
     font-size: 3rem;
     cursor: pointer;
@@ -591,4 +618,23 @@ button::-moz-focus-inner {
     margin: 20px auto 0 auto;
     text-align: center;
     position: relative;
+}
+
+.flash-message {
+    width: 100%;
+    height: 40px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.3rem;
+}
+
+.flash-succcess {
+    background-color: #55CD19;
+    color: #fff;
+    border-left: 1px solid #47AE13;
+    border-right: 1px solid #47AE13;
+    border-bottom: 1px solid #47AE13;
 }

@@ -6,7 +6,7 @@ use App\Entity\Question;
 use App\Entity\Test;
 use App\Form\TestType;
 use App\Repository\TestRepository;
-use App\Services\NewTestService;
+use App\Services\TestService;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Michelf\MarkdownInterface;
@@ -66,10 +66,10 @@ class TestNewController extends AbstractController
     /**
      * @Route("/ajaxAction/insert/new-test")
      * @param Request $request
-     * @param NewTestService $newTest
+     * @param TestService $newTest
      * @return JsonResponse|\Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function ajaxAddNewQuestions(Request $request, NewTestService $newTest)
+    public function ajaxAddNewQuestions(Request $request, TestService $newTest)
     {
         if (!$request->isXmlHttpRequest()) return $this->redirectToRoute('app_test_new');
 

@@ -3,13 +3,28 @@
 {% block body %}
     <div class="test-view-container">
         <div class="test-view">
+            <div title="Usuń test" class="delete-test">
+                <a href="{{ path('app_test_remove', {'testId': test.id}) }}">
+                    <i class="far fa-trash-alt"></i>
+                </a>
+            </div>
             <div title="Edytuj test" class="edit-this-test">
                 <a href="{{ path('app_test_edit', {'testId': test.id}) }}">
                     <i class="far fa-edit"></i>
                 </a>
             </div>
+            <div title="Widok PDF" class="pdf-view">
+                <a href="{{ path('app_test_pdf_view', {'testId': test.id}) }}">
+                    <i class="far fa-file-pdf"></i>
+                </a>
+            </div>
+            <div title="Pobierz" class="pdf-download">
+                <a href="{{ path('app_test_download', {'testId': test.id}) }}">
+                    <i class="fas fa-file-download"></i>
+                </a>
+            </div>
             <div class="test-name">
-                {{ test.name|wordwrap(50) }}
+                <b>{{ test.name|wordwrap(50) }}</b>
             </div>
             <div class="test-description">
                 {{ test.description|nl2br }}

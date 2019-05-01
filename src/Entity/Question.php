@@ -48,9 +48,14 @@ class Question
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Test", inversedBy="questions")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $test;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="questions")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
 
     public function getId(): ?int
     {
@@ -125,6 +130,18 @@ class Question
     public function setTest(?Test $test): self
     {
         $this->test = $test;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
