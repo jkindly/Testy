@@ -32,14 +32,18 @@
                 </div>
             </div>
         </header>
-        <nav>
-            <i class="fas fa-caret-left"></i>
-            <div class="nav-links">
-                <div class="nav-link"><a href="{{ path('app_test_new') }}"><i class="fas fa-plus"></i> Nowy test</a></div>
-                <div class="nav-link"><a href="#"><i class="far fa-file-alt"></i> Twoje testy</a></div>
-                <div class="nav-link"><a href="#"><i class="fas fa-cog"></i> Ustawienia</a></div>
-            </div>
-        </nav>
+        {% if app.user %}
+            <nav>
+                <i class="fas fa-caret-left"></i>
+                <div class="nav-links">
+                    <div class="nav-link"><a href="{{ path('app_test_new') }}"><i class="fas fa-plus"></i> Nowy test</a></div>
+                    <div class="nav-link"><a href="{{ path('app_your_tests') }}"><i class="far fa-file-alt"></i> Twoje testy</a></div>
+                    <div class="nav-link"><a href="{{ path('app_questions') }}"><i class="fas fa-question"></i></i> Twoje pytania</a></div>
+                    <div class="nav-link"><a href="{{ path('app_categories') }}"><i class="fas fa-bars"></i></i> Kategorie testów</a></div>
+                    <div class="nav-link"><a href="#"><i class="fas fa-cog"></i> Ustawienia</a></div>
+                </div>
+            </nav>
+        {% endif %}
         <div class="container">
             <main>
                 {% block body %}{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Twoje testy{% endblock %}
+
+{% block body %}
+    <main>
+        <section class="started-tests-container">
+            <h3>Twoje testy</h3>
+            <div class="your-tests">
+                {% for test in tests %}
+                    <a href="{{ path('app_test_view', {testId: test.id}) }}">
+                        <div class="test">
+                            <div class="test-name your-tests-name">
+                                {{ test.name|truncate(40) }}
+                            </div>
+                            <div class="your-tests-description">
+                                Ostatnia edycja: {{ test.updatedAt|date('d.m.Y H:i') }}
+                                Utworzony: {{ test.createdAt|date('d.m.Y H:i') }}
+                                Liczba pytań: {{ test.questions|length }}
+                            </div>
+                            {#<div class="test-inside-informations">#}
+                                {#<div class="test-inside test-updated-inside">#}
+                                    {#Ostatnia edycja: {{ test.updatedAt|date('d.m.Y H:i') }}#}
+                                {#</div>#}
+                                {#<div class="test-inside test-created-inside">#}
+                                    {#Utworzony: {{ test.createdAt|date('d.m.Y H:i') }}#}
+                                {#</div>#}
+                                {#<div class="test-inside test-questions-inside">#}
+                                    {#Liczba pytań: {{ test.questions|length }}#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<div class="test-name-inside">#}
+                                {#{{ test.name|truncate(40) }}#}
+                            {#</div>#}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock %}

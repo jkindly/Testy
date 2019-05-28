@@ -3,6 +3,7 @@
 <h4>{{ form_widget(form.name) }}</h4>
 <div class="new-test-error name-error"></div>
 {{ form_widget(form.description) }}
+{{ form_widget(form.category) }}
 <div class="test-questions" data-prototype="{{ macro.information_prototype(form.questions.vars.prototype)|e('html_attr')  }}">
     {% for question in form.questions %}
         {{ macro.information_prototype(question) }}

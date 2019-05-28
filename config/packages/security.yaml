@@ -40,4 +40,7 @@ security:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/dashboard, roles: IS_AUTHENTICATED_REMEMBERED }
         - { path: ^/new/test, roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/your-tests, roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/categories, roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: ^/questions, roles: IS_AUTHENTICATED_REMEMBERED }
         # - { path: ^/profile, roles: ROLE_USER }

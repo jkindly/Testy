@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kategorie testów{% endblock %}
+
+{% block body %}
+    <h3>Twoje kategorie testów</h3>
+    <section class="your-categories-container">
+        {% for category in categories %}
+            <div class="category">
+                {{ category.name }}
+            </div>
+        {% endfor %}
+    </section>
+    <div class="add-new-category">
+        + Nowa kategoria
+    </div>
+{% endblock %}

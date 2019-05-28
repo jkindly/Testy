@@ -84,7 +84,8 @@ $(function(){
     createNewTest.on('click', '#add-new-test-btn', function(e) {
         e.preventDefault();
         let formData = $(this).parent().serializeObject();
-        // console.log(formData);
+        console.log(formData);
+
         $.ajax({
             url: '/ajaxAction/insert/new-test',
             dataType: 'json',
@@ -93,8 +94,12 @@ $(function(){
             async: true,
             cache: false,
             success: function(data) {
+                console.log(data);
                 if (data === 'form_valid') {
-                    content.html('Pomyślnie utworzono');
+                    content.html('Pomyślnie utworzono, nastąpi przekierowanie');
+                    window.setTimeout(function(){
+                        window.location.href = "http://localhost:8000";
+                    }, 2000);
                 } else {
                     $('.name-error').html('Wprowadź nazwę');
                 }

@@ -63,10 +63,16 @@ class User implements UserInterface
      */
     private $questions;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="user")
+     */
+    private $categories;
+
     public function __construct()
     {
         $this->tests = new ArrayCollection();
         $this->questions = new ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -234,6 +240,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($question->getUser() === $this) {
                 $question->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+            $category->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        if ($this->categories->contains($category)) {
+            $this->categories->removeElement($category);
+            // set the owning side to null (unless already changed)
+            if ($category->getUser() === $this) {
+                $category->setUser(null);
             }
         }
 

@@ -8,31 +8,33 @@
 
 namespace App\Services;
 
-
 use App\Entity\Question;
 use App\Entity\Test;
 use App\Entity\User;
-use Doctrine\Common\Collections\ArrayCollection;
+use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Security\Core\Security;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 class TestService
 {
     private $em;
     private $security;
+    private $categoriesRepo;
 
-    public function __construct(EntityManagerInterface $em, Security $security)
+    public function __construct(EntityManagerInterface $em, Security $security, CategoriesRepository $categoriesRepo)
     {
         $this->em = $em;
         $this->security = $security;
+        $this->categoriesRepo = $categoriesRepo;
     }
 
     public function create($data)
     {
         $testName = $data['name'];
         $description = $data['description'];
+        $category = $this->categoriesRepo->find($data['category']);
+
 
         $user = $this->security->getUser();
         $test = new Test();
@@ -40,7 +42,8 @@ class TestService
             /** @var User|Security $user */
             ->setUser($user)
             ->setName($testName)
-            ->setDescription($description);
+            ->setDescription($description)
+            ->setCategory($category);
 
         if (!empty($data['questions'])) {
             foreach ($data['questions'] as $question) {

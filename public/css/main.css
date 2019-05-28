@@ -161,7 +161,7 @@ input[type='checkbox'] {
 }
 
 .login-button:hover {
-    background-color: #3493DB;
+    background-color: var(--def-red-hover);
 }
 
 .login-invalid-credentials {
@@ -240,7 +240,7 @@ input[type='checkbox'] {
 }
 
 nav {
-    height: 300px;
+    height: 370px;
     width: 50px;
     background: var(--def-red);
     border-left: 1px solid #CD1F1F;
@@ -278,7 +278,7 @@ nav:hover .fa-caret-left {
 
 .nav-links {
     display: none;
-    width: 160px;
+    width: 230px;
     color: #fff;
     font-size: 2.5rem;
 }
@@ -306,7 +306,7 @@ main {
     /*border: 1px solid red;*/
     width: 800px;
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     flex-flow: row wrap;
 }
 
@@ -321,6 +321,8 @@ main {
     -moz-border-radius: 5px;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .test-inside {
@@ -411,7 +413,7 @@ main {
 
 .test-question {
     /*border: 1px solid black;*/
-    flex: 0 50%;
+    flex: 0 49%;
     margin-bottom: 10px;
 }
 
@@ -482,6 +484,11 @@ main {
     padding: 5px;
     border: 1px solid #B3B3B3;
     text-align: center;
+}
+
+.category-select {
+    margin-top: 5px;
+    padding: 1px;
 }
 
 .input-test-description {
@@ -637,4 +644,63 @@ button::-moz-focus-inner {
     border-left: 1px solid #47AE13;
     border-right: 1px solid #47AE13;
     border-bottom: 1px solid #47AE13;
+}
+
+.your-tests-name {
+    background-color: var(--def-red);
+    color: #fff;
+    text-align: center;
+}
+
+.your-categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid black;
+    padding-boottom: 10px;
+}
+
+.category {
+    width: 150px;
+    height: 40px;
+    border: var(--def-red-border);
+    background-color: var(--def-red);
+    color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-new-category {
+    text-align: center;
+    margin-top: 15px;
+    border: 1px solid var(--def-red-border);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 140px;
+    font-size: 1.7rem;
+    background-color: var(--def-red);
+    color: #fff;
+    padding: 1px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.new-category {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.fa-check-circle, .fa-times-circle {
+    margin-left: 3px;
+    cursor: pointer;
 }

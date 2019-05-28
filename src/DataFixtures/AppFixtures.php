@@ -29,6 +29,14 @@ class AppFixtures extends Fixture
             ->setPassword($this->passwordEncoder->encodePassword($user, 'mnkctnob'))
             ->setUsername('jakub.kozupa');
 
+        $user2 = new User();
+        $user2
+            ->setFirstName('Adminek')
+            ->setLastName('Adminek')
+            ->setEmail('example@gmail.com')
+            ->setPassword($this->passwordEncoder->encodePassword($user2, 'mnkctnob'))
+            ->setUsername('admin.admin');
+
         $test = new Test();
         $test
             ->setName('Funkcje kwadratowe')

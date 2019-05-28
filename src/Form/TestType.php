@@ -3,8 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Category;
-use App\Entity\Question;
 use App\Entity\Test;
+use App\Repository\CategoriesRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
@@ -12,9 +12,20 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class TestType extends AbstractType
 {
+    private $categoriesRepo;
+    private $tokenStorage;
+
+    public function __construct(CategoriesRepository $categoriesRepo, TokenStorageInterface $tokenStorage)
+    {
+        $this->categoriesRepo = $categoriesRepo;
+        $this->tokenStorage = $tokenStorage;
+    }
+
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -33,6 +44,22 @@ class TestType extends AbstractType
                 ],
                 'required' => false,
             ])
+            ->add('category', EntityType::class, [
+                'placeholder' => 'Kategoria testu',
+                'class' => Category::class,
+                'label' => false,
+                'choice_label' => function(Category $category) {
+                    return $category->getName();
+                },
+                'attr' => [
+                    'class' => 'input-test category-select',
+                ],
+                'choices' => $this->categoriesRepo
+                    ->getUserCategories($this->tokenStorage->getToken()->getUser()->getId()),
+                'mapped' => false,
+                'required' => false,
+            ])
+
         ;
         $builder
             ->add('questions', CollectionType::class, [
